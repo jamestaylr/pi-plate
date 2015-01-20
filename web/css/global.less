@@ -1,6 +1,61 @@
+@import "reset.less";
 @import "themes/light.less";
-
-::selection, ::-moz-selection {
-	background-color: @accent-color;
-	color:  @text-color - #FFF;
+::selection , ::-moz-selection {
+    background-color: @accent-color;
+    color: @text-color - #FFF;
 }
+
+a {
+    &:hover {
+        text-decoration: underline;
+        color: lighten(@accent-color, 40%);
+    }
+
+    &:visited {
+        color: darken(@accent-color, 30%);
+    }
+
+    color: lighten(@accent-color, 30%);
+    text-decoration: none;
+    .transition ()
+}
+
+.heading () {
+    color: @text-color;
+    font-family: @heading-font;
+}
+
+h1 {
+    .heading;
+    font-size: 2em;
+}
+
+h2 {
+    .heading;
+    font-size: 1.5em;
+}
+
+h3 {
+    .heading;
+    font-size: 1.17em;
+    font-weight: bold;
+}
+
+p {
+    color: @text-color;
+    font-family: @body-font, sans-serif;
+}
+
+.border-radius (@radius) {
+    -webkit-border-radius: @radius;
+    -moz-border-radius: @radius;
+    border-radius: @radius;
+}
+
+.transition (@property: all , @duration: 0.5s , @function: ease , @delay: 0s) {
+    transition: @property @duration @function @delay;
+    -webkit-transition: @property @duration @function @delay;
+    -moz-transition: @property @duration @function @delay;
+    -o-transition: @property @duration @function @delay;
+}
+
